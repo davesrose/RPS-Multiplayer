@@ -22,14 +22,14 @@ body {
 .winBox {
 	position: fixed;
 	padding: 15%;
-	margin: 0 25%;
+	margin: 0 15%;
 	background-color: #c7e8d7;
 	border-radius: 12px;
 	z-index: 10;
 	font-family: 'Anton', sans-serif;
 	color: #000;
 	text-align: center;
-	font-size: 280%;
+	font-size: 180%;
 }
 .header {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#657744+0,7a8c52+57,627a48+100 */

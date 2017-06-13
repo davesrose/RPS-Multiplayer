@@ -222,6 +222,7 @@ $(document).ready(function(){
     		var loss2 = snapshot.child("2/losses").val();
     		var name1 = snapshot.child("1/name").val();
     		var name2 = snapshot.child("2/name").val();
+    		console.log(name2)
         if ((snapshot.child("1/choice").val() == "paper") && (snapshot.child("2/choice").val() == "paper")) {
             ties = ties + 1;
             snap1.update({choice: ""});
@@ -266,7 +267,7 @@ $(document).ready(function(){
             snap2.update({choice: ""});
             snap1.update({losses: loss1});
             snap2.update({wins: win2});
-            $(".winBox").html("Tie!!")
+            $(".winBox").html("<p>"+ name2 + " Wins!!</p><p>"+name1+" chose rock, "+name2+" chose paper</p>");
             $(".winner").show();
 			setTimeout(function(){
 				$(".winner").hide();
@@ -281,7 +282,7 @@ $(document).ready(function(){
             snap2.update({choice: ""});
             snap1.update({wins: win1});
             snap2.update({losses: loss2});
-            $(".winBox").html(name1 + " Wins!!")
+            $(".winBox").html("<p>"+ name1 + " Wins!!</p><p>"+name1+" chose rock, "+name2+" chose scissors</p>");
             $(".winner").show();
 			setTimeout(function(){
 				$(".winner").hide();
@@ -296,7 +297,7 @@ $(document).ready(function(){
             snap2.update({choice: ""});
             snap1.update({losses: loss1});
             snap2.update({wins: win1});
-            $(".winBox").html(name2 + " Wins!!")
+            $(".winBox").html("<p>"+ name2 + " Wins!!</p><p>"+name1+" chose paper, "+name2+" chose scissors</p>");
             $(".winner").show();
 			setTimeout(function(){
 				$(".winner").hide();
@@ -311,7 +312,7 @@ $(document).ready(function(){
             snap2.update({choice: ""});
             snap1.update({wins: win1});
             snap2.update({losses: loss2});
-            $(".winBox").html(name1 + " Wins!!")
+            $(".winBox").html("<p>"+ name1 + " Wins!!</p><p>"+name1+" chose paper, "+name2+" chose rock</p>");
             $(".winner").show();
 			setTimeout(function(){
 				$(".winner").hide();
@@ -326,7 +327,7 @@ $(document).ready(function(){
             snap2.update({choice: ""});
             snap1.update({losses: loss1});
             snap2.update({wins: win2});
-            $(".winBox").html(name2 + " Wins!!")
+            $(".winBox").html("<p>"+ name2 + " Wins!!</p><p>"+name1+" chose scissors, "+name2+" chose rock</p>");
             $(".winner").show();
 			setTimeout(function(){
 				$(".winner").hide();
@@ -341,7 +342,7 @@ $(document).ready(function(){
             snap2.update({choice: ""});
             snap1.update({wins: win1});
             snap2.update({losses: loss2});
-            $(".winBox").html(name1 + " Wins!!")
+            $(".winBox").html("<p>"+ name1 + " Wins!!</p><p>"+name1+" chose scissors, "+name2+" chose paper</p>");
             $(".winner").show();
 			setTimeout(function(){
 				$(".winner").hide();
@@ -356,5 +357,4 @@ $(document).ready(function(){
         $(".lossTally2").html(loss2);
 
     };
-console.log(player.ties)
 });
