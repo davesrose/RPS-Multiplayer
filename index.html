@@ -14,6 +14,7 @@
 				Rock Paper Scissors Online Game!</h1>
 		</div>
 	</header>
+	<div class="winner"><div class="winBox"></div></div>
 	<main class="main">
 		<div class="wrapper">
 		<h1 id="connect"></h1>
@@ -31,19 +32,23 @@
 					<article class="player1 float">
 						<div class="articleHeader"><h2 class="playerID1">Player 1</h2></div>
 						<div class="waiting">
-							<i class="fa fa-spinner fa-spin fa-one-large fa-fw" style="font-size:700%;margin: 5% 36%;color:#fff;"></i>
+							<i class="fa fa-spinner fa-spin fa-one-large fa-fw" style="font-size:700%;margin: 5% 36%;color:#fff; z-index: 1;"></i>
 						</div>
-						<div class="score score1"><div class="wins" style="margin-left: 6%;">Wins: <span class="winTally"></span></div><div class="ties">Ties: <span class="tieTally"></span></div><div class="losses">Losses: <span class="lossTally"></span></div></div>
+						<div class="score score1"><div class="wins" style="margin-left: 6%;">Wins: <span class="winTally1"></span></div><div class="ties">Ties: <span class="tieTally"></span></div><div class="losses">Losses: <span class="lossTally1"></span></div></div>
 					</article>
 					<article class="player2 float" style="margin-left: 2%;">
 						<div class="articleHeader"><h2 class="playerID2">Player 2</h2></div>
 						<div class="waiting">
-							<i class="fa fa-spinner fa-spin fa-one-large fa-fw" style="font-size:700%;margin: 5% 36%;color:#fff;"></i>
+							<i class="fa fa-spinner fa-spin fa-one-large fa-fw" style="font-size:700%;margin: 5% 36%;color:#fff; z-index: 1;"></i>
 						</div>
-						<div class="score score2"><div class="wins" style="margin-left: 6%;">Wins: <span class="winTally"></span></div><div class="ties">Ties: <span class="tieTally"></span></div><div class="losses">Losses: <span class="lossTally"></span></div></div>
+						<div class="score score2"><div class="wins" style="margin-left: 6%;">Wins: <span class="winTally2"></span></div><div class="ties">Ties: <span class="tieTally"></span></div><div class="losses">Losses: <span class="lossTally2"></span></div></div>
 					</article>
 				</div>
 				<div style="clear: both;"></div>
+				<div class="row">
+					<div class="float status1"><h3>Waiting for Sign-In</h3></div>
+					<div class="float status2" style="margin-left: 2%;"><h3>Waiting for Sign-In</h3></div>
+				</div>
 				<div class="inputMessage">
 					<form>
 						<label for="message">Input your message: </label>
