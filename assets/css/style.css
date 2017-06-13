@@ -1,0 +1,135 @@
+html {
+    height: 100%;
+}
+body {
+	background-color: rgb(175,198,143);
+	background: -moz-linear-gradient(top, rgba(175,198,143,1) 0%, rgba(144,165,96,1) 100%);
+	background: -webkit-linear-gradient(top, rgba(175,198,143,1) 0%,rgba(144,165,96,1) 100%);
+	background: linear-gradient(to bottom, rgba(175,198,143,1) 0%,rgba(144,165,96,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afc68f', endColorstr='#90a560',GradientType=0 );
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.header {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#657744+0,7a8c52+57,627a48+100 */
+	background: rgb(101,119,68); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(101,119,68,1) 0%, rgba(122,140,82,1) 57%, rgba(98,122,72,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(101,119,68,1) 0%,rgba(122,140,82,1) 57%,rgba(98,122,72,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(101,119,68,1) 0%,rgba(122,140,82,1) 57%,rgba(98,122,72,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#657744', endColorstr='#627a48',GradientType=0 ); /* IE6-9 */
+	height: 120px;	
+}
+.wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+}
+.wrapper h1 {
+	font-family: 'Anton', sans-serif;
+	color: #fff;
+	text-align: center;
+	font-size: 280%;
+	padding-top: 38px;
+}
+.fa-one-large {
+	font-size: 500%;
+}
+.input1 h2 {
+	font-size: 240%;
+	margin-left: 10%;
+}
+.float {
+	width: 48.5%;
+	border: solid 2px #fff;
+	border-radius: 12px;
+	margin-top: 15px;
+	float: left;
+	padding: 3% 0px 1% 0px;
+}
+.float button {
+	width: 100%;
+	padding: 2% 0px;
+}
+.float button h3 {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 170%;
+}
+.float h2 {
+	color: #fff;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 130%;
+	padding: 4% 0px;
+	margin-top: -6%;
+	text-align: center;
+}
+.float .fa {
+	margin-right: 1%;
+}
+.articleHeader {
+	background-color: #6a7c47;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+.row {
+	display: flex;
+}
+.SignIn {
+	margin: 10px 30%;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 110%;
+}
+.firstSignIn div {
+	text-align: center;
+}
+.welcome1, .welcome2 {
+	padding-top: 1.5%;
+	text-align: center;
+}
+.float label {
+	margin-left: 0px;
+}
+.status {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 130%;
+	text-align: center;
+	padding-top: 8%;
+	height: 52%;	
+}
+.score {
+	bottom: 0px;
+	margin-top: 3%;
+}
+.score > div {
+	width: 28%;
+	margin-left: 3%;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 120%;
+	float: left;
+}
+.wins {
+	margin-left: 6%;
+}
+.inputMessage {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 130%;
+	margin-top: 15px;
+	margin-left: 3%;
+}
+.inputMessage input[type="text"] {
+	width: 60%;
+}
+.messageBox {
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 130%;
+	margin-top: 15px;
+	padding: 3%;
+	border: solid 2px #fff;
+	border-radius: 12px;
+}
+.messageBox label {
+	margin-left: 3%;
+}
+.messageBox textarea {
+	width: 75%;
+}

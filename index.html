@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors Jam!</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One" rel="stylesheet">
+	<script src="https://use.fontawesome.com/ae85989865.js"></script>
+</head>
+<body>
+	<header class="header">
+		<div class="wrapper">
+			<h1><i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
+				Rock Paper Scissors Online Game!</h1>
+		</div>
+	</header>
+	<main class="main">
+		<div class="wrapper">
+		<h1 id="connect"></h1>
+			<div class="play">
+				<div class="signIn">
+					<article class="SignIn">
+						<form class="input1">
+							<label for="player">Input your name</label>
+							<input type="text" class="nameInput" id="name-input"><input type="button" name="submitPlayer1" value="Input" id="submit">
+						</form>
+						<!-- <div class="welcome">Welcome player: <span class="playerID"></span></div> -->
+					</article>
+				</div>
+				<div class="row player">
+					<article class="player1 float">
+						<div class="articleHeader"><h2 class="playerID1">Player 1</h2></div>
+						<div class="waiting">
+							<i class="fa fa-spinner fa-spin fa-one-large fa-fw" style="font-size:700%;margin: 5% 36%;color:#fff;"></i>
+						</div>
+						<div class="score score1"><div class="wins" style="margin-left: 6%;">Wins: <span class="winTally"></span></div><div class="ties">Ties: <span class="tieTally"></span></div><div class="losses">Losses: <span class="lossTally"></span></div></div>
+					</article>
+					<article class="player2 float" style="margin-left: 2%;">
+						<div class="articleHeader"><h2 class="playerID2">Player 2</h2></div>
+						<div class="waiting">
+							<i class="fa fa-spinner fa-spin fa-one-large fa-fw" style="font-size:700%;margin: 5% 36%;color:#fff;"></i>
+						</div>
+						<div class="score score2"><div class="wins" style="margin-left: 6%;">Wins: <span class="winTally"></span></div><div class="ties">Ties: <span class="tieTally"></span></div><div class="losses">Losses: <span class="lossTally"></span></div></div>
+					</article>
+				</div>
+				<div style="clear: both;"></div>
+				<div class="inputMessage">
+					<form>
+						<label for="message">Input your message: </label>
+						<input type="text" class="message-input" id="input-message"><input type="submit" name="textMessage" value="Input" id="chatSubmit">
+					</form>
+				</div>
+				<div class="messageBox">
+					<form>
+						<label for="messageOut">Messages: </label>
+						<textarea id="textArea" rows="12" class="messageArea"></textarea>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- <script type="text/javascript" src="assets/javascript/jquery.signalr-2.2.2.min.js"></script> -->
+	<!-- <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script> -->
+	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script> -->
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
