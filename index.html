@@ -50,15 +50,16 @@
 					<div class="float status2" style="margin-left: 2%;"><h3>Waiting for Sign-In</h3></div>
 				</div>
 				<div class="inputMessage">
-					<form>
+					<div>
 						<label for="message">Input your message: </label>
-						<input type="text" class="message-input" id="input-message"><input type="submit" name="textMessage" value="Input" id="chatSubmit">
-					</form>
+						<input type="text" class="message-input" id="input-message"><input type="submit" name="textMessage" id="chatSubmit">
+					</div>
 				</div>
 				<div class="messageBox">
 					<form>
 						<label for="messageOut">Messages: </label>
 						<textarea id="textArea" rows="12" class="messageArea"></textarea>
+						<!-- <div class="test"></div> -->
 					</form>
 				</div>
 			</div>
@@ -66,10 +67,7 @@
 		</div>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<!-- <script type="text/javascript" src="assets/javascript/jquery.signalr-2.2.2.min.js"></script> -->
-	<!-- <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script> -->
 	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-	<!-- <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script> -->
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>

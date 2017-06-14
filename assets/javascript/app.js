@@ -14,7 +14,7 @@ $(document).ready(function(){
     var database = firebase.database();
     var listRef = database.ref("presence");
     var userRef = listRef.push();
-    var chats = database.ref("chat");
+    var chatRef = database.ref("chat");
     // Add ourselves to presence list when online.
     var presenceRef = database.ref(".info/connected");
     presenceRef.on("value", function(snap) {
@@ -50,7 +50,7 @@ $(document).ready(function(){
         message: ''
     };
     var waiting = false;
-
+    chatRef.onDisconnect().remove();
     // Number of online users is the number of objects in the presence list.
     listRef.once("value", function(snapshot) {
         if (Object.keys(snapshot.val()).indexOf('1') === -1) {
@@ -74,13 +74,13 @@ $(document).ready(function(){
             // Remove the name form and put the alert there.
            $(".main > .wrapper").empty();
             setTimeout(function(){
-                alert("Two users already on");     
+                alert("Two users already on.  Wait and refresh");     
             }, 50);
         }
         
     }); 
 
-
+    //update player name 
     $("#submit").on("click", function(snap) {
         player.name = $("#name-input").val();
         con.update({
@@ -88,23 +88,13 @@ $(document).ready(function(){
         });
     });
 
-    $("#chatSubmit").on("click", function(snapshot) {
-    	DOMFunctions.showChats(snapshot);
-    })
-
+    //passing functions on the "presence" folder setup in Firebase
     listRef.on('value', function (snapshot) {
-
         // If the player is connected,
+        //showPlayerInfo displays user name and shows game options on player's screen, gameChoice runs logic of clicking options(and ignores second click)
         DOMFunctions.showPlayerInfo(snapshot);
         DOMFunctions.gameChoice(snapshot);
-        if (con) {
-            // And an opponent is connected,
-            if (Object.keys(snapshot.val()).indexOf(opponent.number) !== -1) {
-                // Gather the latest info about your opponent and also yourself.
-                opponent = snapshot.val()[opponent.number];
-                player = snapshot.val()[player.number];
-            }
-        }
+
     });
 
     var DOMFunctions = {
@@ -189,27 +179,6 @@ $(document).ready(function(){
             	$(".status2 > h3").html("Player has made Selection");
             }
             getWinner(snapshot);
-        },
-        showChats: function (snapshot) {
-    		var snap1 = firebase.database().ref("/presence/1");
-    		var snap2 = firebase.database().ref("/presence/2");
-    		console.log(player.name);
-        	if ((snapshot.child("1/name").val() !== "") && (snapshot.child("1/sender").val() == "")) {
-        		snap1.update({sender : player.name})
-        	}
-            // var chatMessage = snapshot.val();
-            // var chatMessage = listRef.child(player)
-            // console.log(chatMessage);
-            // Only show messages sent in the last half hour. A simple workaround for not having a ton of chat history.
-            // if (Date.now() - chatMessage.timestamp < 1800000) {
-            //     var messageDiv = $('#textArea');
-            //     messageDiv.val(chatMessage.sender + ': ' + chatMessage.message);
-            //     // messages.append(messageDiv);
-            // }
-            // DOMFunctions.updateScroll();
-        },
-        updateScroll: function () {
-            messages[0].scrollTop = messages[0].scrollHeight;
         }
     }
     function getWinner (snapshot) {
@@ -222,7 +191,6 @@ $(document).ready(function(){
     		var loss2 = snapshot.child("2/losses").val();
     		var name1 = snapshot.child("1/name").val();
     		var name2 = snapshot.child("2/name").val();
-    		console.log(name2)
         if ((snapshot.child("1/choice").val() == "paper") && (snapshot.child("2/choice").val() == "paper")) {
             ties = ties + 1;
             snap1.update({choice: ""});
@@ -357,4 +325,32 @@ $(document).ready(function(){
         $(".lossTally2").html(loss2);
 
     };
+    
+    //chat function
+	$("#chatSubmit").on("click", function() {
+		var sender = player.name;
+    	var message = $("#input-message").val();
+    	chatRef.push({
+    		sender: sender,
+    		message: message
+    	});
+	});
+	function showMessage(playerName, message) {
+		if (playerName == "") {
+			playerName = "anonymous"
+		}
+    	var selectionStart = $('.messageArea')[0].selectionStart;
+		var selectionEnd = $('.messageArea')[0].selectionEnd;		
+    	$(".messageArea").val($(".messageArea").val() +playerName + ": " + message + "\r");
+		$('.messageArea')[0].selectionStart = selectionStart;
+		$('.messageArea')[0].selectionEnd = selectionEnd;
+	}
+	//sets player name and message
+	chatRef.on('child_added', function(snapshot) {
+		// Get name and message
+		var playerName = snapshot.val().sender;
+		var message = snapshot.val().message;
+		// Show message
+		showMessage(playerName, message);
+	});
 });
